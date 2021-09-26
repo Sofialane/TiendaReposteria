@@ -45,12 +45,18 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(163, 162, 162, 0.521);
+    background-color: rgba(163, 162, 162, 0.726);
+    color: white;
+    border-radius: 40px;
 }
 .nav-menu ul li ul {
     flex-direction: column;
     position:absolute;
+    display: none;
+}
 
+.nav-menu ul li:hover>ul {
+    display: block;
 }
 
 .nav-menu ul li ul li {
@@ -63,12 +69,6 @@ nav a:hover {
     position: absolute;
 }
 
-
-.nav-right   { 
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-}
 
 #boton-menu {
     display: none;
@@ -84,6 +84,10 @@ header label {
 header label:hover {
     cursor: pointer;
     background: rgba(0, 0, 0, 0.3)
+}
+
+.feather.feather-menu {
+    display: none;
 }
 
 .cakepost{
@@ -268,10 +272,13 @@ footer section {
     text-decoration: none;
 }
 
+ /* PAG PEDIDOS */
+
 #inf-pedidos {
     width: 100%;
     margin: auto;
     margin-top: 60px;
+    color: #687283;
     background-color: #dee2ff;
     margin-bottom: 40px;
     padding: 20px;
@@ -280,21 +287,207 @@ footer section {
     
 }
 
-.texto-productos {
-    margin: 60px 0px 500px 0px;
+#formulario {
+    width: 100%;
+    background-color: #dee2ff;
+    display: flex;
+    flex-direction: column;
 }
+
+#formulario h2{
+    padding: 20px 0px;
+
+}
+
+#formulario input, textarea {
+    width: 45%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#formulario textarea {
+    height: 200px;
+    width: 45%;
+}
+#formulario label {
+    padding: 10px 0px;
+}
+
+#boton {
+    background: #a6b5eb;
+    padding: 10px;
+    font-family: "Rubik", sans-serif;
+    border: none;
+}
+
+#boton:hover {
+    cursor: pointer;
+    background: #fdfdfd;
+}
+
+/*PAG PRODUCTOS*/
+
+.texto-productos {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    color: #687283;
+    background-color: #dee2ff;
+    padding: 20px;
+}
+
+.buscador label {
+    text-transform: uppercase
+}
+
+#searchBar {
+    margin: 20px 0;
+    width: 150px;
+}
+
+/* PRODUCTOS */
+
+ /*Listado productos*/
+
+ #listado-productos {
+    width: 100%;
+    
+}
+
+#contenido h3 {
+    font-size: 20px;
+    margin: 15px 20px 15px;
+    border-bottom: 1px solid #8e9aaf;
+    padding: 11px 0 12px 20px;
+    text-transform: uppercase;
+}
+
+.product img{
+    width: 150px;
+    height: 130px; 
+}
+
+.product {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#contenido ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+#product-holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 10px;
+    border: 1px gray;
+}
+
+.product .info .nombre {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+ .product .info a .nombre {
+    height: 60px;
+ }
+.product .info p {
+    width: 170px;
+    height: 50px;
+}
+
+
+.product .info .precio {
+    text-transform: uppercase;
+    background: none repeat scroll 0 0 #F7F7F7;
+    color: #383838;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    margin: 17px 0 10px;
+    padding: 6px 0 6px 8px;
+}
+
+.product .info .agregar a {
+    text-transform: uppercase;
+    border: 1px solid #E0E0E0;
+    color: #9785b4;
+    display: block;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+
+
+#contenido #Productos, #contenido #Carrito {
+    border: 1px solid #E9E9E9;
+    float: left;
+    margin: 0 2%;
+}
+
+/*CARRITO*/
+#contenido #Carrito {
+    width: 30%;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#cart-holder li {
+    display: flex;
+    justify-content: space-around;
+}
+
+#Carrito p {
+    float: right;
+}
+
+#cart-holder input  {
+    width: 30px;
+}
+
+/*PAG INFORMACION*/
 
 .texto-informacion {
-    margin: 60px 0px 60px 0px;
-}
-
-.texto-fechas {
-    margin: 60px 0px 500px 0px; 
+    width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    color: #687283;
+    background-color: #dee2ff;
+    margin-bottom: 40px;
+    padding: 20px;
 }
 
 .ilustracion img{
     width: 550px;
 }
+
+
+/*PAG FECHAS ESPECIALES*/
+
+.texto-fechas {
+    width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    background-color: #dee2ff;
+    margin-bottom: 400px;
+    padding: 20px; 
+}
+
+
 
 /* MEDIA QUERY CELULAR*/
 @media (max-width: 450px) {
@@ -307,28 +500,55 @@ footer section {
     }
 
     header label {
+        color: #8e9aaf;
         display: block;
     }
 
     .nav-items {
         position:absolute;
-        background-color: #f7f7f7cb;
+        background-color: #e5e2e2cb;
         margin-right: 100%;
     }
 
     .nav-menu ul  {
         flex-direction: column;
-        width: 70%;
+        width: 100%;
+        top: 0px;
+        display: none;
+        text-align: left;
+        transition: all .5s;
     }
 
-    .nav-menu li {
+    .nav-menu ul:hover{
+        background-color: #79808b;
+    }
+
+    .nav-menu ul li {
+        display: block;
+        line-height: 25px;
         border-top: 1px solid #f7f7f7;
     }
-    
+
+    .nav-menu ul li a {
+        font-size: 20px;
+    }
+
+    .nav-menu li a:hover {
+        color: #79808b;
+    }
+
+    #boton-menu:checked ~ .nav-menu ul  {
+        display: block;
+    }
+
+    .feather.feather-menu {
+        display: block;
+    }
 
     .nav-menu img {
         margin: 20px -20px 0;
     }
+
     .cakepost {
         width: 100%;
         height: 600px;
@@ -384,6 +604,21 @@ footer section {
         text-align: center;
     }
 
+    #formulario input, textarea {
+        width: 100%
+    }
+    #formulario textarea {
+        width: 100%;
+
+    }
+
+    #product-holder {
+        grid-template-columns: 1fr;
+    }
+
+    #contenido #productos, #contenido #Carrito{
+        width: 100%;
+    }
 
 
 
@@ -394,6 +629,48 @@ footer section {
     body {
         width: 95%;
         font-size: 15px;
+    }
+
+    header label {
+        color: #8e9aaf;
+        display: block;
+    }
+
+    .nav-items {
+        position:absolute;
+        background-color: #e5e2e2cb;
+        margin-right: 100%;
+    }
+
+    .nav-menu ul  {
+        flex-direction: column;
+        width: 100%;
+        top: 0px;
+        /*right: 100%;*/
+        text-align: left;
+        transition: all .5s;
+    }
+
+    .nav-menu ul:hover{
+        background-color: #79808b;
+    }
+
+    .nav-menu ul li {
+        display: block;
+        line-height: 25px;
+        border-top: 1px solid #f7f7f7;
+    }
+
+    .nav-menu ul li a {
+        font-size: 20px;
+    }
+
+    .nav-menu li a:hover {
+        color: #79808b;
+    }
+
+    #boton-menu:checked ~ .nav-menu ul  {
+        right: 0%;
     }
     .cakepost {
         width: 100%;
