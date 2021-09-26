@@ -637,6 +637,10 @@ footer section {
         width: 100%;
     }
 
+    .ilustracion img {
+        width: 300px;
+    }
+
 
 
 }
@@ -648,10 +652,19 @@ footer section {
         font-size: 15px;
     }
 
+    .contenedor {
+        width: 95%;
+        margin: auto;
+    }
+
     header label {
         color: #8e9aaf;
         display: block;
     }
+    .feather.feather-menu {
+        display: block;
+    }
+
 
     .nav-items {
         position:absolute;
@@ -661,13 +674,18 @@ footer section {
 
     .nav-menu ul  {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         top: 0px;
-        /*right: 100%;*/
+        display: none;
         text-align: left;
         transition: all .5s;
     }
 
+    .nav-items  a {
+        background-color: #c5b7fdd9;
+        color: white;
+    }
+    
     .nav-menu ul:hover{
         background-color: #79808b;
     }
@@ -677,7 +695,20 @@ footer section {
         line-height: 25px;
         border-top: 1px solid #f7f7f7;
     }
+    .nav-menu ul li ul {
+        flex-direction: column;
+        display: none;
+    }
 
+    .nav-menu ul li ul li {
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .nav-menu ul li:hover>ul {
+        display: block;
+        position: relative;
+    }
     .nav-menu ul li a {
         font-size: 20px;
     }
@@ -686,9 +717,14 @@ footer section {
         color: #79808b;
     }
 
-    #boton-menu:checked ~ .nav-menu ul  {
-        right: 0%;
+    #boton-menu:checked ~ .nav-items{
+        display: block !important;
+        margin-top: 75px;
     }
+
+
+
+
     .cakepost {
         width: 100%;
         height: 600px;
