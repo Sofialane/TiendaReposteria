@@ -14,6 +14,9 @@
     <header class="contenedor">
         <nav class= "nav-menu">
             <img class="img-nav" src="../imgs/transparentlogocnc.png" alt="Logo CNC">
+            <!--MENU DESPLEGABLE RESPONSIVE-->
+            <input type="checkbox" id="boton-menu">
+            <label for="boton-menu"><i data-feather="menu"></i></label>
             <ul class="nav-items">
                 <li><a href="../index.html">Inicio</a></li>
                 <li> <a href="">Productos</a></li>
@@ -34,10 +37,6 @@
                 </li>
             </ul>
             
-            <!--MENU DESPLEGABLE RESPONSIVE-->
-            <input type="checkbox" id="boton-menu">
-            <label for="boton-menu"><i data-feather="menu"></i></label>
-
         </nav> 
     </header>    
     <section class="texto-productos">
@@ -158,7 +157,7 @@
             
 
         function searchProduct() {
-            let input = document.getElementById('searchBar').cartLine
+            let input = document.getElementById('searchBar').value
             let filteredProduct = products.filter(product => product.name.includes(input))
             if(input.length !== 0) {
                 filteredProducts = products.filter(product =>
@@ -213,9 +212,9 @@
             totalHolder.innerHTML = total
         }
 
-        function editQuantity(event,productId){
+        function editQuantity(event, productId){
             let quantity = event.target.value;
-            let cartLine = cart.find(cartLine => value.product.id == productId)
+            let cartLine = cart.find(cartLine => cartLine.product.id == productId)
 
             cartLine.quantity = quantity
             document.getElementById(`priceById${productId}`).innerHTML = cartLine.product.price * quantity
@@ -224,7 +223,7 @@
             cart.forEach(cartLine => {
                 total += cartLineproduct.price * cartLine.quantity;
             })
-            
+
             totalHolder.innerHTML = total
         }
    

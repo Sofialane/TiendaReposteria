@@ -60,15 +60,13 @@ nav a:hover {
 }
 
 .nav-menu ul li ul li {
-    width: 180px;
     position: relative;
-}
+} 
 .nav-menu ul li ul li ul{
     top: 0;
     left: 180px;
     position: absolute;
 }
-
 
 #boton-menu {
     display: none;
@@ -416,17 +414,14 @@ footer section {
     padding: 6px 0 6px 8px;
 }
 
-.product .info .agregar a {
-    text-transform: uppercase;
-    border: 1px solid #E0E0E0;
-    color: #9785b4;
-    display: block;
+.product .info .agregar button {
     float: right;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px;
-    text-decoration: none;
+    width: 75px;
+    height: 25px;
+    background-color: #b0b0f3;
+    border: none;
+    border-radius: 40px;
+    color: #fffdfd;
 
 }
 
@@ -447,8 +442,9 @@ footer section {
 }
 
 #cart-holder li {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    margin-bottom: 10px;
 }
 
 #Carrito p {
@@ -458,6 +454,8 @@ footer section {
 #cart-holder input  {
     width: 30px;
 }
+
+
 
 /*PAG INFORMACION*/
 
@@ -512,11 +510,16 @@ footer section {
 
     .nav-menu ul  {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         top: 0px;
         display: none;
         text-align: left;
         transition: all .5s;
+    }
+
+    .nav-items  a {
+        background-color: #c5b7fdd9;
+        color: white;
     }
 
     .nav-menu ul:hover{
@@ -528,7 +531,20 @@ footer section {
         line-height: 25px;
         border-top: 1px solid #f7f7f7;
     }
+    .nav-menu ul li ul {
+        flex-direction: column;
+        display: none;
+    }
 
+    .nav-menu ul li ul li {
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .nav-menu ul li:hover>ul {
+        display: block;
+        position: relative;
+    }
     .nav-menu ul li a {
         font-size: 20px;
     }
@@ -537,8 +553,9 @@ footer section {
         color: #79808b;
     }
 
-    #boton-menu:checked ~ .nav-menu ul  {
-        display: block;
+    #boton-menu:checked ~ .nav-items{
+        display: block !important;
+        margin-top: 75px;
     }
 
     .feather.feather-menu {
